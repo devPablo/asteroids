@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'asteroids';
+  src: url('./../../assets/fonts/atari-asteroids.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+$primary-font: 'asteroids';
+$font-size-base: 16px;

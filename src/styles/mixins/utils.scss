@@ -1,0 +1,6 @@
+@import '/src/styles/constants/fonts.scss';
+
+@function toRem($size) {
+  $remSize: calc($size / $font-size-base);
+  @return #{$remSize}rem;
+}

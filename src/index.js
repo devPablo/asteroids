@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Asteroids from './Asteroids';
+import App from './components/App/App';
+import './styles/index.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Asteroids />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
