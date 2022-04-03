@@ -1,7 +1,8 @@
 import Bullet from '../Bullet/Bullet';
 import Particle from '../Particle/Particle';
 import { rotatePoint, randomNumBetween } from '../../libs/helpers';
-
+import BULLET_AUDIO from './../../assets/sounds/fire.wav';
+import THRUST_AUDIO from './../../assets/sounds/thrust.wav';
 export default class Ship {
   constructor(args) {
     this.position = args.position;
@@ -77,6 +78,11 @@ export default class Ship {
       },
     });
     this.create(particle, 'particles');
+
+    // Thrust audio
+    let thrustAudio = new Audio(THRUST_AUDIO);
+    thrustAudio.volume = 0.1;
+    thrustAudio.play();
   }
 
   render(state) {
@@ -94,6 +100,11 @@ export default class Ship {
       const bullet = new Bullet({ ship: this });
       this.create(bullet, 'bullets');
       this.lastShot = Date.now();
+
+      // Bullet audio
+      let bulletAudio = new Audio(BULLET_AUDIO);
+      bulletAudio.volume = 0.55;
+      bulletAudio.play();
     }
 
     // Move

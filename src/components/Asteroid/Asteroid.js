@@ -1,5 +1,6 @@
 import { asteroidVertices, randomNumBetween } from '../../libs/helpers';
 import Particle from '../Particle/Particle';
+import ASTEROID_AUDIO from './../../assets/sounds/bangSmall.wav';
 
 export default class Asteroid {
   constructor(args) {
@@ -41,6 +42,10 @@ export default class Asteroid {
       });
       this.create(particle, 'particles');
     }
+    // Asteroid audio
+    let asteroidAudio = new Audio(ASTEROID_AUDIO);
+    asteroidAudio.volume = 0.6;
+    asteroidAudio.play();
 
     // Break into smaller asteroids
     if (this.radius > 10) {
